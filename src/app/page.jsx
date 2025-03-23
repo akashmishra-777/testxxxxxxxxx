@@ -5,7 +5,7 @@ import DeleteButton from "./_components/DeleteButton"
 import Form from "./_components/Form"
 export default async function Page(){
 
-  const data = await fetch(`https://todo-kohl-omega.vercel.app/api/todo`,{
+  const data = await fetch(`/api/todo`,{
     cache:"no-cache",
   })
 
