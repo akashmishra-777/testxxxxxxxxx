@@ -8,6 +8,9 @@ export default function DeleteButton({id}) {
             const res = await fetch(`/api/todo`,{
                 method:"DELETE",
                 cache:"no-cache",
+                headers:{
+                    "Content-Type":"application/json"
+                },
                 body:JSON.stringify({id:id})
             })
 

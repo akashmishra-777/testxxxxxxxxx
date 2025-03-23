@@ -1,11 +1,11 @@
+
 import Link from "next/link"
 import CopyButton from "./_components/CopyButton"
 import DeleteButton from "./_components/DeleteButton"
 import Form from "./_components/Form"
 export default async function Page(){
 
-  const data = await fetch("http://localhost:3000/api/todo",{
-    method:"GET",
+  const data = await fetch(`https://todo-kohl-omega.vercel.app/api/todo`,{
     cache:"no-cache",
   })
 
@@ -36,7 +36,7 @@ export default async function Page(){
 
       dx.map((item,index)=>{
 
-        return<div key={new Date.now() + index} className="text-blue-700 px-3 py-2 mx-auto w-[65%] rounded bg-slate-800 text-2xl justify-between flex items-center flex-col mb-2 ">
+        return<div key={item._id} className="text-blue-700 px-3 py-2 mx-auto w-[65%] rounded bg-slate-800 text-2xl justify-between flex items-center flex-col mb-2 ">
         
         <div className="flex flex-row justify-between  w-[100%]">
         <span className="text-lg text-gray-400 font-semibold">Task {index+1}</span>

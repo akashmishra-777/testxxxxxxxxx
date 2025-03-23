@@ -50,8 +50,8 @@ export async function DELETE(req){
 
 export async function PUT(req){
     try{
-        const body = await req.formData()
-        const id = body.get("id")
+        const body = await req.json()()
+        const id = body.id
         const task = body.get("task")
         const check = await TODO.findByIdAndUpdate(id,{
             task:task
